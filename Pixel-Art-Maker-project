@@ -1,0 +1,38 @@
+// Select color input
+// Select size input
+
+// When size is submitted by the user, call makeGrid()
+
+
+
+
+$(document).ready(function(){
+  
+  
+  $('#sizePicker').submit(function makeGrid(grid)
+                          {
+    
+    
+    var x = $('#inputHeight').val();
+    var y = $('#inputWidth').val();
+    
+    for (var i=1; i<=x; i++){
+      $('table').append('<tr></tr>');
+      for (var j =1; j<=y; j++){
+        $('tr:last').append('<td></td>');
+        $('td').attr("class", 'cells');
+        
+      }
+    }
+     grid.preventDefault();
+   
+    $('.cells').click(function(event) {
+      
+      
+      var colorpick = $('#colorPicker').val();
+      
+      $(event.target).css('background-color', colorpick);
+      
+    });
+  });
+});
